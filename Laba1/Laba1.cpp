@@ -1,4 +1,5 @@
 ﻿
+#include <GraphicObject.h>
 #include <stdio.h>
 #include <Windows.h>
 #include <GL/gl.h>
@@ -7,45 +8,6 @@
 #include <GL/freeglut.h>
 
 
-// КЛАСС ДЛЯ ПРЕДСТАВЛЕНИЯ ОДНОГО ГРАФИЧЕСКОГО ОБЪЕКТА
-class GraphicObject
-{
-private:
-    // Позиция и угол поворота для объекта 
-    GLfloat position[3];
-    GLfloat angle;
-    // Матрица модели (расположение объекта) ‐ чтоб не вычислять каждый раз
-    GLfloat modelMatrix[16];
-    // Цвет модели
-    GLfloat color[3];
-public:
-    // Конструктор
-    GraphicObject(void);
-    // Задать позицию объекта
-    void setPosition(float x, float y, float z);
-    // Задать угол поворота в градусах относительно оси OY
-    void setAngle(float a);
-    // Задать цвет модели
-    void setColor(float r, float g, float b);
-    // Вывести объект
-    void draw(void);
-};
-GraphicObject::GraphicObject(void) {
-
-}
-
-void GraphicObject::setPosition(float x, float y, float z) {
-
-}
-void GraphicObject::setAngle(float a) {
-
-}
-void GraphicObject::setColor(float r, float g, float b) {
-
-}
-void GraphicObject::draw(void) {
-
-}
 
 
 

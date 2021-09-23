@@ -88,7 +88,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\kiril\Documents\univer\compgraph\Laba1\freeglut\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\kiril\Documents\univer\compgraph\Laba1\Laba1;C:\Users\kiril\Documents\univer\compgraph\Laba1\freeglut\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalModuleDependencies>opengl32.lib;glu32.lib;freeglut.lib</AdditionalModuleDependencies>
       <AdditionalHeaderUnitDependencies>
       </AdditionalHeaderUnitDependencies>
@@ -148,7 +148,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="GraphicObject.cpp" />
     <ClCompile Include="Laba1.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GraphicObject.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
