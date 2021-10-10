@@ -11,23 +11,11 @@
 
 
 
-const int numberOfColors = 4; //количество цветов
-int currentColor = 0; //индекс текущего цвета
 
 // МАССИВ ОБЪЕКТОВ ДЛЯ ВЫВОДА
-const int    graphicObjectCount = 4;
+const int graphicObjectCount = 1;
 GraphicObject graphicObjects[graphicObjectCount];
 
-struct Color { //структура для представления цвета
-    float Red, Green, Blue;
-    Color(float R, float G, float B) : Red(R), Green(G), Blue(B) {}
-};
-Color colorArray[numberOfColors] = { // массив цветоа
-    Color(0.0f, 0.0f, 0.0f), //black
-    Color(1.0f, 1.0f, 1.0f), //white
-    Color(0.0f, 0.0f, 1.0f), //blue
-    Color(1.0f, 0.0f, 0.0f), //red
-};
 //функция вызывается каждые 20 мс
 void Simulation(int value) {
     //устанавливаем признак того, что окно нуждается в перерисовке
@@ -52,8 +40,9 @@ void Display(void) {
     // устанавливаем камеру
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
-    gluLookAt(15, 10, 20, 0, 0, 0, 0, 1, 0);
+    gluLookAt(15, 15, 7.5, 0, 0, 0, 0, 1, 0);
     // выводим объекты
+    graphicObjects[0].setColor(1, 1, 1);
     for (int i = 0; i < graphicObjectCount; i++) {
         graphicObjects[i].draw();
     };
@@ -62,12 +51,6 @@ void Display(void) {
 }
 
 void KeyboardFunc(unsigned char key, int x, int y) {
-    if (key == GLUT_KEY_ALT_L) {
-        currentColor++; //изменяем текущий цвет на следующий в массиве
-        if (currentColor == numberOfColors) {
-            currentColor = 0;
-        }
-    }
 }
 
 int main(int argc, char* argv[])
